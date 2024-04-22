@@ -1,0 +1,92 @@
+/*emoji-panel*/
+#small_emoji_list{
+    width: 300px;
+    background-color: #e3e5e8;
+    overflow:auto;
+    height: 48px;
+  }
+  
+  #big_emoji_list{
+    width: 300px;
+    background-color: #e3e5e8;
+    overflow:auto;
+    height: 90px;
+  }
+  
+  .emoji_list_header{
+    background-color: #7d848a;
+    color:white;
+    margin-top:3px;
+    padding-left:5px;
+  }
+  
+  
+  .small-emoji-holder{
+    width:24px;
+    height:24px;
+    background-color:white;
+    display: inline-block;
+    position: relative;
+    border-radius: 10%; 
+  }
+  
+  .small-emoji-holder:hover{
+    background-color: #F1F2F3;
+    border-radius: 3px; 
+    transition: color 0.1s, background-color 0.1s; 
+  }
+  
+  .diy-small-emoji{
+    width: 24px;
+    height:24px;
+  }
+  .small-emoji-holder:hover::after {
+    content: attr(emojiname);
+    display: block;
+    position: absolute;
+    background-color: #fff;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: -30px;
+    margin-left: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    white-space: nowrap; 
+    z-index: 999;
+  }
+
+  .big-emoji-holder{
+    width: 55.99px;
+    height: 55.99px;
+    background-color:white;
+    display: inline-block;
+    position: relative;
+    border-radius: 10%; 
+  }
+  
+  .big-emoji-holder:hover{
+    background-color: #F1F2F3;
+    border-radius: 3px; 
+    transition: color 0.1s, background-color 0.1s; 
+  }
+  .big-emoji-holder:hover::after {
+    content: attr(emojiname);
+    display: block;
+    position: absolute;
+    background-color: #fff;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: -30px;
+    margin-left: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    white-space: nowrap; 
+    z-index: 999;
+  }
+  
+  
+  
+  .diy-big-emoji{
+    width: 55.99px;
+    height:55.99px;
+  }

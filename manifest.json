@@ -1,0 +1,19 @@
+{
+    "manifest_version": 3,
+	"name": "Test",
+    "version": "0.0.0.0",
+    "content_scripts": [
+        {	
+            "matches": ["https://www.bilibili.com/video/*"],
+            "js": ["js/inject.js"],
+            "run_at": "document_start"
+        }
+     ],
+     "web_accessible_resources": [
+        {
+          "resources": ["settings-panel.html","js/wordlist.js","css/some.css","css/wordpanel.css","css/emojipanel.css","js/filter.js","js/elselist.js","js/emojilist.js"],
+          "matches": ["<all_urls>"]
+        }
+      ]    
+  }
+  

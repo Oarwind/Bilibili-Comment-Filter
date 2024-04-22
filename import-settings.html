@@ -1,0 +1,47 @@
+<div id="header">
+    <div id="word_panel_btn" class="panel_btn active">屏蔽文本</div>
+    <div id="emoji_panel_btn" class="panel_btn">屏蔽表情</div>
+    <div id="else_panel_btn" class="panel_btn">其他</div>
+    <button id="close_btn" onclick="closePanel()">保存设置</button>
+</div>
+
+<div id="word_panel" class="panel active">
+    <div id="word_list_container">
+        <div id="word_list_header">
+            <div id="title_content">内容</div>
+            <div id="title_others">
+                <div>启用</div>
+                <div>操作</div>
+            </div>
+        </div>
+
+        
+        <div id="word_list">
+        
+        </div>
+    </div>	
+    
+</div>
+
+
+
+<div id="emoji_panel"  class="panel">
+    <div>
+        <div id="emoji_list">
+            <div>
+
+            </div>
+            <div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="else_panel" class="panel">
+    <div>
+        <input id="banAtSomeoneCheckbox" type="checkbox" onchange="changeBanAt()">
+        屏蔽@某人
+    </div>
+</div>
+

@@ -1,0 +1,239 @@
+#setting-button:hover{
+  color: white;
+  background-color: #00AEEC; 
+  border-color: #00AEEC; 
+  transition: color 0.2s, background-color 0.2s;
+}
+
+.diy-centered {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  z-index: 100;
+
+  width: 300px;
+  height: 250px;
+  font-family: SC, HarmonyOS_Regular, Helvetica Neue, Microsoft YaHei, sans-serif;
+  border-radius: 10px; /* 设置圆角半径 */
+  background-color: #f0f0f0; /* 设置背景颜色 */
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); 
+
+  resize: both;
+  overflow: auto;
+  }
+
+#header div {
+  display: inline-block;
+  margin-right: 10px; /* 可以添加一些右边距来增加间隔 */
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+/*panel相关*/
+.panel{
+  cursor: pointer;
+  font-size: 12px;
+  display: none;
+}
+
+.panel.active {
+  display: block;
+}
+
+.panel_btn.active{
+  color: #00aeec;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+#btn_add:hover{
+  color: white;
+  background-color: #00AEEC; 
+  border-color: #00AEEC; 
+  transition: color 0.2s, background-color 0.2s;
+}
+
+#close_btn{
+  margin-right: 0;
+  background-color: #f0f0f0;
+  transition: color 0.2s, background-color 0.2s; /* 添加颜色过渡效果 */
+}
+
+#close_btn:hover{
+  color: white; 
+  background-color: rgb(209, 20, 20); 
+  border-color: rgb(209, 20, 20); 
+}
+
+/*refreshButton*/
+#refreshReminder{
+  display: none;
+  position: fixed;
+  bottom: 2px;
+  right: 10px;
+}
+
+.refreshButton{
+  display: inline-block;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  border:2px solid #00AEEC;
+  border-left:2px solid transparent;
+  position: relative;
+  margin-top: 2px;
+}
+
+.refreshButton::after{
+  content: "";
+  width: 3px;
+  height: 3px;
+  border-bottom: 2px solid #00AEEC;
+  border-left: 2px solid #00AEEC;
+  position: absolute;
+  top: 8px;
+  left: 1px;
+  transform: rotate(70deg);
+}
+
+.refreshButton:hover{
+  border:2px solid #85dcff;
+  border-left:2px solid transparent;
+}
+.refreshButton:hover::after{
+  border-bottom: 2px solid #85dcff;
+  border-left: 2px solid #85dcff;
+}
+
+/*上下文菜单*/
+.context-menu {
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 5px;
+  left: 0; /* 添加这行代码 */
+  top: 0; /* 添加这行代码 */
+  white-space: nowrap; 
+  z-index:9999;
+}
+
+.context-menu li {
+  cursor: pointer;
+  padding: 5px;
+  white-space: nowrap; 
+}
+
+.context-menu li:hover {
+  background-color: #f2f2f2;
+}
+
+/*错误消息*/
+.error-message {
+  display: none;
+  position: absolute;
+  top: 20px;
+  left: 75%;
+  transform: translateX(-50%);
+  background-color: black;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 10px; 
+  white-space: nowrap; /* 设置文本不换行 */
+}
+
+.error-message.show {
+  display: block;
+}
+
+.JSON-error{
+  position: absolute;
+  top:50%;
+  display: none;
+  left:50%;
+  width:150px;
+  height:20px;
+  background-color: black;
+  color:white;
+  z-index: 9999;
+  text-align: center;
+  transform: translateX(-50%);
+  padding: 5px 10px;
+  white-space: nowrap;
+  border-radius: 10px;
+  font-size: 12px;
+}
+
+.JSON-error.show{
+  display:block;
+}
+
+.tooltip {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+  z-index: 999;
+}
+
+/*help-tip*/
+.help-tip {
+  position: fixed;
+  bottom: 5px;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #00AEEC;
+  text-align: center;
+  cursor: default;
+}
+
+.help-tip:before {
+  content: '?';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  color: white;
+}
+
+.help-tip p {
+  display: none;
+  position: absolute; /* 添加绝对定位 */
+  top: -100px; /* 调整距离上方的位置 */
+  left: -50%; /* 居中对齐 */
+  width: 200px; /* 设置矩形宽度 */
+  background-color: black; /* 修改为黑色 */
+  color: white; /* 修改字体颜色为白色 */
+  padding: 8px; /* 添加内边距 */
+  border-radius: 5px; /* 添加边框圆角 */
+  text-align:left;
+}
+
+.help-tip:hover p{
+	display:block;
+	transform-origin: 100% 0%;
+
+	-webkit-animation: fadeIn 0.3s ease-in-out;
+	animation: fadeIn 0.3s ease-in-out;
+}
+
+
+/*else-panel*/
+.export-reminder{
+  color:red;
+  font-size: 80%;
+}
+.handle-global-settings:hover{
+  color: #00AEEC; 
+  transition: color 0.1s, background-color 0.1s;
+}
+

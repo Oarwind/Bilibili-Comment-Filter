@@ -1,0 +1,109 @@
+<div id="header">
+    <div id="word_panel_btn" class="panel_btn active">屏蔽文本</div>
+    <div id="emoji_panel_btn" class="panel_btn">屏蔽表情</div>
+    <div id="else_panel_btn" class="panel_btn">其他</div>
+    <button id="close_btn" onclick="closePanel()">关闭</button>
+</div>
+
+<div id="word_panel" class="panel active">
+    <div id="word_edit_container">
+        <input id="word_editor" class="editor" type="text" placeholder="添加屏蔽词，正则以“/”开头以“/”结尾">
+        <div id="space-message" class="error-message">屏蔽词不能为空</div>
+        <div id="duplicate-message" class="error-message">屏蔽词已存在</div>
+        <button id="btn_add" onclick="addWord()">添加</button>
+    </div>
+
+    <div id="word_list_container">
+        <div id="word_list_header">
+            <div id="title_content">内容</div>
+            <div id="title_others">
+                <div>启用</div>
+                <div>操作</div>
+            </div>
+        </div>
+        <ul id="wl-context-menu" class="context-menu" style="display: none;">
+            <li id="export-json" onclick="exportWordList()">导出JSON文件</li>
+            <li id="import-json" onclick="selectfile('wl_fileInput')">导入JSON文件</li>
+        </ul>
+
+        
+        <div id="word_list">
+        
+        </div>
+    </div>	
+    <div class="help-tip">
+        <p>
+            1. 支持导入弹幕屏蔽词列表;<br>
+            2. 导出的JSON文件可以直接导入弹幕屏蔽词列表.<br>
+        </p>
+    </div>
+
+
+</div>
+
+
+
+<div id="emoji_panel"  class="panel">
+    <div id="emoji_edit_container">
+        <input id="emoji_editor" class="editor" placeholder="支持文本输入，例“[doge]”">
+        <button id="btn_add" onclick="addEmoji()">添加</button>
+        <div id="noemoji-message" class="error-message">未检测到表情</div>
+        <div id="nochange-message" class="error-message">没有新表情添加</div>
+    </div>
+    <div id="emoji_list">
+        <div class="emoji_list_header">
+            小表情
+        </div>
+        <div id="small_emoji_list" class="emoji_list">
+            
+
+        </div>
+        <div class="emoji_list_header">
+            大表情
+        </div>
+        <div id="big_emoji_list" class="emoji_list">
+            
+        </div>
+    </div>
+    <div class="help-tip">
+        <p>
+            1. 支持连续输入多个表情;<br>
+            2. 在阅读评论区的时候，鼠标悬浮在对应表情上即可知道表情名称;<br>
+            3. 只有在使用者的表情列表中的表情才能显示图标.
+        </p>
+    </div>
+</div>
+
+<div id="else_panel" class="panel">
+    <div>
+        <input id="banAtSomeoneCheckbox" type="checkbox" onchange="changeBanAt()">
+        屏蔽@某人
+    </div>
+    <div id="banByFanDiv">
+        <input id="banByFanCheckbox" type="checkbox" onchange="banByFan()">
+        不屏蔽@十万粉以上up主
+    </div>
+    <div>
+        <input id="ToolTipEnabled" type="checkbox" onchange="changeToolTip()">
+        鼠标悬浮显示表情名称
+    </div>
+    <div>
+        <div class="handle-global-settings" onclick="exportGlobal()">导出全局设置</div>
+        <div class="handle-global-settings" onclick="selectfile('global_fileInput')">导入全局设置</div>
+        <div class="export-reminder">注意：在清除浏览器缓存前，务必导出全局设置</div>
+    </div>
+</div>
+<div id="refreshReminder">
+    刷新页面以启用新设置
+    <div class="refreshButton" onclick="location.reload()"></div>
+</div>
+
+<input type="file" id="wl_fileInput" accept=".json" style="display: none;" onchange="importWordList(event)">
+<input type="file" id="global_fileInput" accept=".json" style="display: none;" onchange="importGlobal()">
+
+
+<div id="parse-fail" class="JSON-error">JSON文件解析失败</div>
+<div id="bad-pattern" class="JSON-error">JSON文件结构错误</div>
+<div id="read-fail" class="JSON-error">文件读取失败！</div>
+<div id="noword-message" class="JSON-error">没有可导出的屏蔽词!</div>
+<div id="add-success" class="JSON-error">导入成功！</div>
